@@ -1,0 +1,66 @@
+	* {padding: 0; margin: 0;}
+
+	/* cosmetic */
+
+	body {
+		font-size: 28px;
+		font-family: Helvetica, Arial, sans-serif;
+		background-color: #000;
+	}
+
+	.counter-scroll .object {
+		background-color: #999;
+	}
+
+	.page {
+		width: 1000px;
+		margin: 0 auto;
+		padding: 20px;
+		background-color: #fff;
+	}
+
+	.page p {
+		margin-bottom: 20px;
+	}
+
+	/* counter-scroll */
+
+	html,
+	body {
+		height: 100%;
+	}
+
+	body {
+		-webkit-perspective: 200px;
+		perspective: 200px;
+	}
+
+	.counter-scroll {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 0;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+	}
+
+	.counter-scroll .object {
+		position: absolute;
+		width: 100%;
+		height: 200px;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		-webkit-transform: translateZ(50px) scale(1);
+		transform: translateZ(50px) scale(1);
+	}
+
+	.counter-scroll .object p {
+		display: block;
+		text-align: center;
+		line-height: 200px;
+	}
+
