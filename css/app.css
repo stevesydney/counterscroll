@@ -4,51 +4,39 @@ body {
   height: 100%; }
 
 body {
-  background-color: #000;
+  background: #fff url(../grid.gif) 0 0 repeat;
   font-size: 18px;
-  -webkit-perspective-origin: 50% 50%;
-  -webkit-perspective: 200px; }
-  body .page {
-    width: 70%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff; }
-    body .page p {
-      margin-bottom: 20px; }
+  min-height: 10000px;
+  -webkit-perspective-origin: 300px 300px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 300px;
+  -o-perspective-origin: 300px 300px;
+  -o-transform-style: preserve-3d;
+  -o-perspective: 300px;
+  -moz-perspective-origin: 300px 300px;
+  -moz-transform-style: preserve-3d;
+  -moz-perspective: 300px;
+  perspective-origin: 300px 300px;
+  transform-style: preserve-3d;
+  perspective: 300px; }
   body .counter-scroll {
-    background-color: transparent;
-    -webkit-transform-style: preserve-3d;
+    background-color: #71C5B1;
     position: fixed;
-    width: 100vw;
-    height: 2630px;
-    top: 0;
-    left: 0;
-    z-index: 0; }
+    width: 600px;
+    height: 600px;
+    top: 350px;
+    left: 350px;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    -webkit-transform: translateZ(150px) translateY(-300px) translateX(-300px) scale(0.5);
+    -o-transform: translateZ(150px) translateY(-300px) translateX(-300px) scale(0.5);
+    -moz-transform: translateZ(150px) translateY(-300px) translateX(-300px) scale(0.5);
+    transform: translateZ(150px) translateY(-300px) translateX(-300px) scale(0.5); }
     body .counter-scroll .object-contain {
-      background-color: #FC499B;
-      position: relative;
-      width: 200px;
-      height: 200px;
-      z-index: 4;
-      top: 0;
-      left: 50%;
-      -webkit-transform: translateZ(100px) translateY(0) translateX(-50%) scale(0.5); }
-    body .counter-scroll .object {
-      width: 200px;
-      height: 200px;
-      background-color: #FED04F;
-      position: absolute;
-      z-index: 5;
-      -webkit-transform: translateZ(100px) scale(1); }
-      body .counter-scroll .object .panel {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 200px;
-        height: 200px;
-        background-color: rgba(243, 239, 226, 0.5); }
-      body .counter-scroll .object p {
+      -webkit-transform-style: flat; }
+      body .counter-scroll .object-contain .panel p {
         display: block;
+        line-height: 600px;
         text-align: center;
-        line-height: 200px;
         margin: 0; }

@@ -1,7 +1,15 @@
 @import "../bower_components/normalize.css/normalize.css";
 
-// $object-height: 200px;
-// $object-width: 200px;
+//vars
+$object-size 	: 600px;
+$left 			: 100px;
+$top			: 100px;
+$zoom			: 1;
+
+// -------------
+$scale 			: $zoom * 0.5;
+$offset 		: round( $object-size * $scale );
+$depth			: round( $offset * $scale );
 
 html,
 body {
@@ -9,76 +17,55 @@ body {
 }
 
 body {
-	background-color: #000;
+	background: #fff url(../grid.gif) 0 0 repeat;
 	font-size: 18px;
+	min-height: 10000px;
 	
-	-webkit-perspective-origin: 50% 50%;
-	// 	transform-style: preserve-3d;
-	-webkit-perspective: 200px;
+	-webkit-perspective-origin: $offset $offset;
+	-webkit-transform-style: preserve-3d;
+	-webkit-perspective: $offset;
 
-	.page {
-		width: 70%;
-		margin: 0 auto;
-		padding: 20px;
-		background-color: #fff;
-		p {
-			margin-bottom: 20px;
-		}
-	}
+	-o-perspective-origin: $offset $offset;
+	-o-transform-style: preserve-3d;
+	-o-perspective: $offset;
+
+	-moz-perspective-origin: $offset $offset;
+	-moz-transform-style: preserve-3d;
+	-moz-perspective: $offset;
+
+	perspective-origin: $offset $offset;
+	transform-style: preserve-3d;
+	perspective: $offset;
 
 	.counter-scroll {
 
-		background-color: transparent;//#71C5B1;
-
-		-webkit-transform-style: preserve-3d;
+		background-color: #71C5B1;
 
 		position: fixed;
-		width: 100vw;
-		height: 2630px;
-		top: 0;
-		left: 0;
-		z-index: 0;
-
+		width: $object-size;
+		height: $object-size;
+		top: $offset + round( $top * $scale );
+		left: $offset + round( $left * $scale );
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		-webkit-transform: translateZ($depth) translateY(-$offset) translateX(-$offset) scale($scale);
+		-o-transform: translateZ($depth) translateY(-$offset) translateX(-$offset) scale($scale);
+		-moz-transform: translateZ($depth) translateY(-$offset) translateX(-$offset) scale($scale);
+		transform: translateZ($depth) translateY(-$offset) translateX(-$offset) scale($scale);
 
 		.object-contain {
-			background-color: #FC499B;
-
-			position: relative;
-			width: 200px;
-			height: 200px;
-			z-index: 4;
-			top: 0;
-			left: 50%;
-			-webkit-transform: translateZ(100px) translateY(0) translateX(-50%) scale(0.5);
-
-		}
-
-		.object {
-			width: 200px;
-			height: 200px;
-			background-color: #FED04F;
-			position: absolute;
-			z-index: 5;
-			-webkit-transform: translateZ(100px) scale(1);
-
+			-webkit-transform-style: flat;
+		
 			.panel {
-				position: relative;
-				top: 0;
-				left: 0;
-				width: 200px;
-				height: 200px;
-				background-color: transparentize( #F3EFE2, 0.5 );
-			}
+				p {
+					display: block;
+					line-height: $object-size;
+					text-align: center;
+					margin: 0;
 
-			p {
-				display: block;
-				text-align: center;
-				line-height: 200px;
-				margin: 0;
+				}
 			}
-
 		}
-
 	}
-
 }
