@@ -1,0 +1,22 @@
+{
+  "name": "counterscroll",
+  "version": "0.0.1",
+  "homepage": "https://github.com/stevesydney/counterscroll",
+  "description": "To create a dependable, configurable and logical method for manipulating the position of DOM elements relative to scroll position without the use of JS.",
+  "main": "index.html",
+  "authors": [
+    "Steve Farrugia"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3"
+  }
+}

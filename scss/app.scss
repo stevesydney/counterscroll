@@ -1,0 +1,84 @@
+@import "../bower_components/normalize.css/normalize.css";
+
+// $object-height: 200px;
+// $object-width: 200px;
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: #000;
+	font-size: 18px;
+	
+	-webkit-perspective-origin: 50% 50%;
+	// 	transform-style: preserve-3d;
+	-webkit-perspective: 200px;
+
+	.page {
+		width: 70%;
+		margin: 0 auto;
+		padding: 20px;
+		background-color: #fff;
+		p {
+			margin-bottom: 20px;
+		}
+	}
+
+	.counter-scroll {
+
+		background-color: transparent;//#71C5B1;
+
+		-webkit-transform-style: preserve-3d;
+
+		position: fixed;
+		width: 100vw;
+		height: 2630px;
+		top: 0;
+		left: 0;
+		z-index: 0;
+
+
+		.object-contain {
+			background-color: #FC499B;
+
+			position: relative;
+			width: 200px;
+			height: 200px;
+			z-index: 4;
+			top: 0;
+			left: 50%;
+			-webkit-transform: translateZ(100px) translateY(0) translateX(-50%) scale(0.5);
+
+		}
+
+		.object {
+			width: 200px;
+			height: 200px;
+			background-color: #FED04F;
+			position: absolute;
+			z-index: 5;
+			-webkit-transform: translateZ(100px) scale(1);
+
+			.panel {
+				position: relative;
+				top: 0;
+				left: 0;
+				width: 200px;
+				height: 200px;
+				background-color: transparentize( #F3EFE2, 0.5 );
+			}
+
+			p {
+				display: block;
+				text-align: center;
+				line-height: 200px;
+				margin: 0;
+			}
+
+		}
+
+	}
+
+}
